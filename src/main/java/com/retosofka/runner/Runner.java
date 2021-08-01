@@ -1,8 +1,8 @@
-package com.retosofka;
+package com.retosofka.runner;
 
 import com.retosofka.casosdeuso.ConfigurarJuego;
 import com.retosofka.casosdeuso.IniciarJuego;
-import com.retosofka.utilidades.ObtenerDatosRandomicos;
+
 
 public class Runner {
 

@@ -34,7 +34,9 @@ public class IniciarJuego {
 
         System.out.println("Puesto 1 "+juegoConfigurado.getPodio().getPrimerPuesto().getNombre());
         System.out.println("Puesto 2 "+juegoConfigurado.getPodio().getSegundoPuesto().getNombre());
-        System.out.println("Puesto 3 "+juegoConfigurado.getPodio().getTercerPuesto().getNombre());
+        if (juegoConfigurado.getNumeroJugadores()>= 3) {
+            System.out.println("Puesto 3 " + juegoConfigurado.getPodio().getTercerPuesto().getNombre());
+        }
     }
 
     private void tirarDados(Conductor conductor){

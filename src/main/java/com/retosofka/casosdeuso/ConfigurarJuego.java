@@ -33,7 +33,12 @@ public class ConfigurarJuego {
         juego.setPistaSeleccionada(seleccionAleatoriaDePista());
         asignarCarrilPorCorredor();
         juego.setPodio(new Podio());
+        imprimirNombreCircuito();
         return juego;
+    }
+
+    private void imprimirNombreCircuito() {
+        System.out.println(juego.getPistaSeleccionada().getNombreCircuito());
     }
 
     private void asignarCarrilPorCorredor() {
@@ -86,6 +91,5 @@ public class ConfigurarJuego {
         int indiceDePista= ObtenerDatosRandomicos.obttenerNumeroAleatorioEnRango(pistas.retornaListadoPistas().size());
         return pistas.retornaListadoPistas().get(indiceDePista);
     }
-
 
 }

@@ -24,6 +24,12 @@ public class Carros {
         carros.add(crearCarroTipoUno());
         carros.add(crearCarroTipoDos());
         carros.add(crearCarroTipoTres());
+        carros.add(crearCarroTipoCuatro());
+        carros.add(crearCarroTipoCinco());
+        carros.add(crearCarroTipoSeis());
+        carros.add(crearCarroTipoSiete());
+        carros.add(crearCarroTipoOcho());
+
     }
 
     private Carro crearCarroTipoUno(){
@@ -45,6 +51,41 @@ public class Carros {
         carroTipoTres.setNumero(3);
         carroTipoTres.setMarca("Mazeratti");
         return carroTipoTres;
+    }
+
+    private Carro crearCarroTipoCuatro(){
+        Carro carroTipoCuatro = new Carro();
+        carroTipoCuatro.setNumero(4);
+        carroTipoCuatro.setMarca("Porche");
+        return carroTipoCuatro;
+    }
+
+    private Carro crearCarroTipoCinco(){
+        Carro carroTipoCinco = new Carro();
+        carroTipoCinco.setNumero(5);
+        carroTipoCinco.setMarca("Lamborghini");
+        return carroTipoCinco;
+    }
+
+    private Carro crearCarroTipoSeis() {
+        Carro carroTipoSeis = new Carro();
+        carroTipoSeis.setNumero(6);
+        carroTipoSeis.setMarca("Bugatti");
+        return carroTipoSeis;
+    }
+
+    private Carro crearCarroTipoSiete() {
+        Carro carroTipoSiete = new Carro();
+        carroTipoSiete.setNumero(7);
+        carroTipoSiete.setMarca("Ford");
+        return carroTipoSiete;
+    }
+
+    private Carro crearCarroTipoOcho() {
+        Carro carroTipoOcho = new Carro();
+        carroTipoOcho.setNumero(8);
+        carroTipoOcho.setMarca("Audi");
+        return carroTipoOcho;
     }
 
 }

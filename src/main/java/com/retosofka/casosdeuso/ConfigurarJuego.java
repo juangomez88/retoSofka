@@ -1,9 +1,9 @@
 package com.retosofka.casosdeuso;
 
-import com.retosofka.entidades.Carro;
-import com.retosofka.entidades.Conductor;
-import com.retosofka.entidades.Juego;
+import com.retosofka.entidades.*;
 import com.retosofka.utilidades.Carros;
+import com.retosofka.utilidades.ObtenerDatosRandomicos;
+import com.retosofka.utilidades.Pistas;
 import com.retosofka.utilidades.TecladoInput;
 
 import java.util.ArrayList;
@@ -15,11 +15,13 @@ public class ConfigurarJuego {
     private  Juego juego;
     private TecladoInput tecladoInput;
     private  Carros carros;
+    private Pistas pistas;
     private ArrayList<Carro> listaTemporalCarros=new ArrayList<>();
 
     public ConfigurarJuego(){
         this.tecladoInput=TecladoInput.obtenerUnicaInstancia();
         this.carros=Carros.obternerUnicaInstancia();
+        this.pistas=Pistas.obtenerUnicaInstancia();
         listaTemporalCarros= carros.retornaListadoCarros();
         juego=new Juego();
     }
@@ -28,12 +30,21 @@ public class ConfigurarJuego {
         generarCodigoJuego();
         ingresarCantidadJugadores();
         regitroPilotos();
+        juego.setPistaSeleccionada(seleccionAleatoriaDePista());
+        asignarCarrilPorCorredor();
+        juego.setPodio(new Podio());
         return juego;
+    }
+
+    private void asignarCarrilPorCorredor() {
+        juego.getJugadores().forEach(conductor ->
+                juego.getPistaSeleccionada().getCarrilPorCarro().put(ObtenerDatosRandomicos.obtenerCarrilAleatorio(),conductor.getNumeroCarro()));
     }
 
     private void generarCodigoJuego(){
         juego.setCodigo(Calendar.getInstance(Locale.ROOT).getTimeInMillis());
     }
+
 
     private void ingresarCantidadJugadores(){
         System.out.print("Ingrese la cantidad de jugadores: ");
@@ -47,6 +58,8 @@ public class ConfigurarJuego {
             juego.getJugadores().add(piloto);
         }
     }
+
+
 
     private Conductor ingresarConductor(int i) {
         Conductor piloto = new Conductor();
@@ -68,5 +81,11 @@ public class ConfigurarJuego {
 
         return piloto;
     }
+
+    private Pista seleccionAleatoriaDePista(){
+        int indiceDePista= ObtenerDatosRandomicos.obttenerNumeroAleatorioEnRango(pistas.retornaListadoPistas().size());
+        return pistas.retornaListadoPistas().get(indiceDePista);
+    }
+
 
 }

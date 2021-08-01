@@ -1,6 +1,5 @@
 package com.retosofka.utilidades;
 
-import com.retosofka.entidades.Carro;
 import com.retosofka.entidades.Pista;
 
 import java.util.ArrayList;
@@ -21,6 +20,10 @@ public class Pistas {
         pistas.add(crearCircuitoSpa());
         pistas.add(crearCircuitoSusuka());
 
+    }
+
+    public ArrayList<Pista> retornaListadoPistas(){
+        return  pistas;
     }
 
     private Pista crearCircuitoSusuka(){

@@ -1,11 +1,20 @@
 package com.retosofka.entidades;
 
-import java.util.ArrayList;
+
+import java.util.HashMap;
 
 public class Pista {
     private String nombreCircuito;
     private int kilometros;
-    private ArrayList<Carro> carriles=new ArrayList<>();
+    private HashMap<Integer,Integer> carrilPorCarro =new HashMap<>();
+
+    public HashMap<Integer, Integer> getCarrilPorCarro() {
+        return carrilPorCarro;
+    }
+
+    public void setCarrilPorCarro(HashMap<Integer, Integer> carrilPorCarro) {
+        this.carrilPorCarro = carrilPorCarro;
+    }
 
     public int getKilometros() {
         return kilometros;
@@ -13,14 +22,6 @@ public class Pista {
 
     public void setKilometros(int kilometros) {
         this.kilometros = kilometros;
-    }
-
-    public ArrayList<Carro> getCarriles() {
-        return carriles;
-    }
-
-    public void setCarriles(ArrayList<Carro> carriles) {
-        this.carriles = carriles;
     }
 
     public String getNombreCircuito() {

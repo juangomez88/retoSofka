@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Implementation-Title: Prueba
+Main-Class: com.retosofka.runner.Runner
+

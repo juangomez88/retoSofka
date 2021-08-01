@@ -16,6 +16,10 @@ public class IniciarJuego {
         this.juegoConfigurado = juegoConfigurado;
     }
 
+    public Juego getJuegoConfigurado() {
+        return juegoConfigurado;
+    }
+
     public void iniciaJuego(){
         int distanciaPistaMetros= Conversores.convertirKilometrosAMetros(juegoConfigurado.getPistaSeleccionada().getKilometros());
         ArrayList<Conductor> listaTemporalConductores=juegoConfigurado.getJugadores();

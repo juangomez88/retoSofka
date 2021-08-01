@@ -3,7 +3,7 @@ package com.retosofka.entidades;
 import java.util.ArrayList;
 
 public class Pista {
-    private int numeroCarriles;
+    private String nombreCircuito;
     private int kilometros;
     private ArrayList<Carro> carriles=new ArrayList<>();
 
@@ -15,11 +15,19 @@ public class Pista {
         this.kilometros = kilometros;
     }
 
-    public int getNumeroCarriles() {
-        return numeroCarriles;
+    public ArrayList<Carro> getCarriles() {
+        return carriles;
     }
 
-    public void setNumeroCarriles(int numeroCarriles) {
-        this.numeroCarriles = numeroCarriles;
+    public void setCarriles(ArrayList<Carro> carriles) {
+        this.carriles = carriles;
+    }
+
+    public String getNombreCircuito() {
+        return nombreCircuito;
+    }
+
+    public void setNombreCircuito(String nombreCircuito) {
+        this.nombreCircuito = nombreCircuito;
     }
 }

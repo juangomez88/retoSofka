@@ -3,18 +3,17 @@ package com.retosofka.utilidades;
 import java.util.Scanner;
 
 public class TecladoInput {
-    TecladoInput unicaInstancia;
-    Scanner teclado;
+    private static TecladoInput unicaInstancia;
+    private Scanner teclado;
 
-    public TecladoInput obtenerUnicaInstancia(){
+    public static TecladoInput obtenerUnicaInstancia(){
         if(unicaInstancia==null)
             unicaInstancia = new TecladoInput();
         return unicaInstancia;
     }
 
     private TecladoInput(){
-        this.unicaInstancia=new TecladoInput();
-        this.teclado=new Scanner(System.in);
+        teclado=new Scanner(System.in);
     }
 
     public Scanner getTeclado() {

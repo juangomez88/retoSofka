@@ -17,3 +17,10 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Prueba',
+                 'Main-Class': 'com.retosofka.Runner'
+    }
+}
